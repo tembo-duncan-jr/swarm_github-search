@@ -1,0 +1,90 @@
+/* Overlay style */
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    @include rgba-background($primary-color, 1);
+    z-index: 999;
+    @include breakpoint(tablet){
+        @include opacity(0);
+        pointer-events: none;
+    }
+    .overlay-close {
+        /* Overlay closing cross */
+        position: absolute;
+        background: transparent;
+        color: #fff;
+        right: 20px;
+        top: 20px;
+        border: none;
+        outline: none;
+        z-index: 100;
+    }
+    nav {
+        /* Menu style */
+        text-align: center;
+        @extend .abso-pos-center;
+        width: 100%;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        @extend .abso-pos-center;
+        @include flexbox;
+        @include flexflow(column);
+        li {
+            &:not(:last-of-type) {
+                padding-bottom: $min-unit;
+            }
+            a {
+                @include rgba-color($primary-color-white, 1);
+                @include transition(color 0.2s);
+                &:hover,
+                &:focus {
+                    @include rgba-color($primary-color-white, .8);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* Effects */
+.container {
+    /* background: #fff;*/
+    transition: transform 0.5s;
+    /* &.overlay-open {*/
+    /*     -ms-transform: scale(0.8);*/
+    /*     transform: scale(0.8);*/
+    /* }*/
+}
+
+.overlay-contentscale {
+    visibility: hidden;
+    @include transform(translateY(100%));
+    transition: transform 0.5s, visibility 0s 0.5s;
+    &.open {
+        visibility: visible;
+        @include transform(translateY(0%));
+        transition: transform 0.5s;
+    }
+}
+
+
+
+/* @media screen and (max-height: 30.5rem) {*/
+/*     .overlay {*/
+/*         nav {*/
+/*             height: 70%;*/
+/*         }*/
+/*         ul {*/
+/*             li {*/
+/*                 min-height: 34px;*/
+/*             }*/
+/*         }*/
+/*     }*/
+/* }*/

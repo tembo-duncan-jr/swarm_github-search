@@ -1,0 +1,294 @@
+.default-transition {
+    @include transition(all .3s $easeInOutSine);
+}
+
+.alt-easing {
+    transition-timing-function: $main-easing-2;
+}
+
+/* duration*/
+.min-transition-duration{
+    transition-duration: .3s; 
+}
+
+.trans-dur_v-fast{
+    transition-duration: .3s; 
+}
+
+.trans-dur_fast{
+    transition-duration: .6s; 
+}
+
+.trans-dur_slow{
+    transition-duration: .8s; 
+}
+
+.trans-dur_v-slow {
+    transition-duration: 1s; 
+}
+
+/* delay*/
+.trans-delay-slow {
+    transition-delay: .35s; 
+}
+
+.trans-delay-v-slow {
+    transition-delay: .6s; 
+}
+
+.trans-delay-v-slow-2 {
+    transition-delay: .8s; 
+}
+
+.trans-delay-v-slow-3 {
+    transition-delay: 1.2s; 
+}
+
+.trans-delay-v-slow-4 {
+    transition-delay: 2.8s; 
+}
+
+.trans-delay-v-slow-5 {
+    transition-delay: 2.9s; 
+}
+
+.trans-delay-v-slow-6 {
+    transition-delay: 3.2s; 
+}
+
+.trans-delay-v-slow-7 {
+    transition-delay: 3.6s; 
+}
+
+.default-trans {
+    @extend .default-transition;
+    @extend .trans-dur_fast;
+    @include opacity(0);
+}
+
+.flexbox-default {
+    @include flexbox;
+    &.flex-wrap {
+        @include flexWrap(wrap);
+    }
+    &.flex-column {
+        @include flexflow(column);
+    }
+}
+
+/* color*/
+.light-border {
+    border: 1px solid;
+    @include border-opacity($primary-color-white, 20);
+}
+
+.no-border{
+    border: none;
+}
+
+.min-border-radius {
+    border-radius: calc(#{$main-border-radius} - 1px);
+}
+
+.block-border {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include breakpoint(phablet){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @include breakpoint(iPhoneSixLandscape){
+        padding-left: calc(#{$min-unit} + #{$min-unit});
+        padding-right: calc(#{$min-unit} + #{$min-unit});
+    }
+    @include breakpoint(surfacePro2){
+        padding-left: calc(#{$min-unit} + 3rem);
+        padding-right: calc(#{$min-unit} + 3rem);
+    }
+    @include breakpoint(iPhone-6-Plus_landscape){
+        padding-left: calc(#{$min-unit} + 2rem);
+        padding-right: calc(#{$min-unit} + 2rem);
+    }
+    @include breakpoint(tablet){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* text */
+.text-align_center {
+    text-align: center;
+}
+
+.no-padding {
+    @include padding(0);
+}
+
+/* proportion*/
+.full-width,
+.semiMid-width {
+    @include center-block;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.default-max-width {
+    @include breakpoint(largelaptop){
+        max-width: calc(90% - 1rem);
+        margin: 0 auto;
+    }
+}
+
+.semiMid-width {
+    @extend .full-width;
+    max-width: 90%;
+    @include breakpoint(tablet){
+        max-width: 70%;
+    }
+    @include breakpoint(largelaptop){
+        max-width: 60%;
+    }
+    @include breakpoint(xtraWidelargelaptop){
+        max-width: 70%;
+    }
+}
+
+/* hover states*/
+.prim-bg_hover {
+    @include rgba-background($body-color, 1);
+    &:hover {
+        @include rgba-background($primary-color, 1);
+    }
+}
+.prim-color_hover {
+    @include rgba-color($body-color, 1);
+    &:hover {
+        @include rgba-color($primary-color, 1);
+    }
+}
+
+/*Responsive Image Assit*/
+.imgSizer {
+    max-width: 100%;
+    height: auto;
+}
+
+.imgCenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+img {
+    &.opaque-2 {
+        @include breakpoint(tablet) {
+            @include opacity(.8);
+        }
+    }
+    &.rwd-img {
+        @extend .imgSizer, .imgCenter;
+    }
+    &.view-mob {
+        display: block;
+        @include breakpoint(phablet) {
+            display: none;
+        }
+    }
+    &.view-phablet {
+        display: none;
+        @include breakpoint(phablet) {
+            display: block;
+        }
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+    &.view-tablet {
+        display: none;
+        @include breakpoint(tablet) {
+            display: block;
+        }
+        @include breakpoint(laptop) {
+            display: none;
+        }
+    }
+    &.view-laptop {
+        display: none;
+        @include breakpoint(laptop) {
+            display: block;
+        }
+        @include breakpoint(largelaptop) {
+            display: none;
+        }
+    }
+    &.view-wide-laptop {
+        display: none;
+        @include breakpoint(largelaptop) {
+            display: block;
+        }
+        @include breakpoint(widelargelaptop) {
+            display: none;
+        }
+    }
+    &.view-large-laptop {
+        display: none;
+        @include breakpoint(widelargelaptop) {
+            display: block;
+        }
+    }
+}
+
+/* end Responsive Image Assit*/
+
+/* states*/
+.off-state {
+    @include opacity(0);
+    pointer-events: none;
+    &.is-active {
+        @include opacity(1);
+        pointer-events: all;
+    }
+}
+
+/* positioning */
+.abso-pos-center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    @include transform(translate(-50%, -50%));
+}
+
+.trans_center-x {
+    left: 50%;
+    @include transform(translateX(-50%));
+}
+
+.trans_center-y {
+    top: 50%;
+    @include transform(translateY(-50%));
+}
+
+.shift-transformUp{
+    @include breakpoint(tablet){
+        @include transform(translateY(-20%));
+        &.shift-low {
+            @include transform(translateY(-25%));
+        }
+        &.shift-high {
+            @include transform(translateY(-45%));
+        }
+    }
+}
+
+/* ====*/
+.aux-el {
+    display: none;
+    @include breakpoint(tablet){
+        display: block;
+    }
+}
+
+
+

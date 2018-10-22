@@ -1,0 +1,215 @@
+/*********************
+BREAKPOINTS
+*********************/
+
+/* Legend */
+/* uB = Universal Breakpoint */
+/* (majority devices wil use) */
+
+@mixin breakpoint($point) {  
+    /* min width: 2560px - uB */
+    @if $point==largeTV {
+        @media (min-width: 160.000em) { 
+            @content ;
+        }
+    }
+    /* min width: 2000px - uB */
+    @if $point==xtralargedesktop {
+        @media (min-width: 125em) { 
+            @content ;
+        }
+    }
+    /* min width: 1920px*/
+    @if $point==largedesktop {
+        @media (min-width: 120em) { 
+            @content ;
+        }
+    }
+    /* min width: 1800px - debug */
+    @else if $point==debugWidelargelaptop {
+        @media (min-width: 112.500em) { 
+            @content ;
+        }
+    }
+    /* min width: 1600px - uB */
+    @else if $point==xtraWidelargelaptop {
+        @media (min-width: 100em) { 
+            @content ;
+        }
+    }
+    /* min width: 1536px*/
+    @else if $point==iPadGen3_-_4_-_5 {
+        @media (min-width: 96em) { 
+            @content ;
+        }
+    }
+    /* min width: 1440px*/
+    @else if $point==widelargelaptop {
+        @media (min-width: 90em) { 
+            @content ;
+        }
+    }
+    /* min width: 1366px*/
+    @else if $point==largelaptop {
+        @media (min-width: 85.375em) { 
+            @content ;
+        } 
+    }
+    /* min width: 1280px - uB */
+    @else if $point==upperEndlaptop {
+        @media (min-width: 80em) { 
+            @content ;
+        }
+    }
+    /* min width: 1024px*/
+    @else if $point==laptop {
+        @media (min-width: 64em) {
+            @content ;
+        }
+    }
+    /* min width: 960px - uB*/
+    @else if $point==xSmallLaptop {
+        @media (min-width: 60.000em) {
+            @content ;
+        }
+    }
+    /* min width: 900px - uB*/
+    @else if $point==tabletLarge {
+        @media (min-width: 56.250em) {
+            @content ;
+        }
+    }
+    /* min width: 800px - uB*/
+    @else if $point==tablet {
+        @media (min-width: 50em) {
+            @content ;
+        }
+    }
+    /* min width: 768px - uB */
+    @else if $point==tabletSmall {
+        @media (min-width: 48em) { 
+            @content ;
+        }
+    }
+    /* min width: 736px - uB */
+    @else if $point==iPhone-6-Plus_landscape {
+        @media (min-width: 46em) { 
+            @content ;
+        }
+    }
+    /* min width: 720px - uB */
+    @else if $point==surfacePro2 {
+        @media (min-width: 45em) { 
+            @content ;
+        }
+    }
+    /* min width: 667px - uB */
+    @else if $point==iPhoneSixLandscape {
+        @media (min-width: 41.688em) { 
+            @content ;
+        }
+    }
+    /* min width: 640px - uB */
+    @else if $point==phabletLarge {
+        @media (min-width: 40em) { 
+            @content ;
+        }
+    }
+    /* min width: 600px*/
+    @else if $point==phablet {
+        @media (min-width: 37.5em) {  
+            @content ;
+        } 
+    }
+    /* min width: 568px - uB */
+    @else if $point==iPhoneLandscape {
+        @media (min-width: 35.5em) {
+            @content ;
+        }
+    }
+    /* min width: 480px - uB */
+    @else if $point==midSmallMob {
+        @media (min-width: 30em) {
+            @content ;
+        }
+    }
+    /* min width: 432px - uB */
+    @else if $point==microsoft-Lumia-1520 {
+        @media (min-width: 27em) {
+            @content ;
+        }
+    }
+    /* min width: 414px - uB */
+    @else if $point==iPhone6Port {
+        @media (min-width: 25.875em) {
+            @content ;
+        }
+    }
+    /* min width: 400px - uB */
+    @else if $point==minSmallMob {
+        @media (min-width: 25em) {
+            @content ;
+        }
+    }
+    /* min width: 375px*/
+    @else if $point==iPhone-6-6S_port {
+        @media (min-width: 22.5em) {
+            @content ;
+        }
+    }
+    /* min width: 360px*/
+    @else if $point==largemob {
+        @media (min-width: 22.5em) {
+            @content ;
+        }
+    }
+    /* min width: 320px*/
+    @else if $point==smallmob {
+        @media (min-width: 20em) {
+            @content ;
+        }
+    }
+    /* ===*/
+    /* max width: 320px - max very small smartphone */
+    @else if $point==maxVerySmallMob {
+        @media (max-width: 20em) {
+            @content ;
+        }
+    }
+    /* max width: 360px - max small smartphone */
+    @else if $point==maxSmartSmallMob {
+        @media (max-width: 22.5em) {
+            @content ;
+        }
+    }
+    /* max width: 400px - max smartphone - uB */
+    @else if $point==maxSmallMob {
+        @media (max-width: 25em) {
+            @content ;
+        }
+    }
+    /* max width: 600px - for debugging mostly*/
+    @else if $point==mobileonly {
+        @media (max-width: 37.5em) {
+            @content ;
+        }
+    }
+    /* max width: 768px - for debugging mostly*/
+    @else if $point==mobileSmallTabletOnly {
+        @media (max-width: 48em) {
+            @content ;
+        }
+    }
+    /* max width: 800px - for debugging mostly*/
+    @else if $point==mobiletabletonly {
+        @media (max-width: 50em) {
+            @content ;
+        }
+    }
+    /* max width: 1024px - for debugging mostly*/
+    @else if $point==maxSmallLaptop {
+        @media (max-width: 64em) {
+            @content ;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+.header_top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background: #fff;
+	/* dev only*/
+	border-bottom: 1px solid;
+	@include border-opacity($primary-color, 0);
+	.mobMenuCta {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		@include rgba-color($primary-color, 1);
+		background: transparent;
+		@include breakpoint(tablet){
+			display: none;
+		}
+	}
+	.main_header{
+		@extend .default-max-width;
+		padding-bottom: .5rem;
+		@include breakpoint(midSmallMob){
+			padding-bottom: 0;
+		}
+		@include breakpoint(tablet){
+			padding-bottom: 1.5rem;
+		}
+	}
+}
+
+/*Header Styles here */
+.underline-border {
+	width: 100%;
+    height: 1px;
+    @include rgba-background($primary-color-offwhite, .4);
+    @include breakpoint(tablet){
+    	height: 3px;
+    	@include rgba-background($primary-color-offwhite, .7);
+    }
+}
+
+.brand-logo {
+	width: 100%;
+	max-width: 10rem;
+	position: absolute;
+	z-index: 999999;
+	@extend .default-transition;
+	@include breakpoint(iPhoneSixLandscape){
+		max-width: 11rem;
+	}
+	@include breakpoint(upperEndlaptop){
+		max-width: 18rem;
+	}
+	@include breakpoint(xtraWidelargelaptop){
+		max-width: 20rem;
+	}
+	.icon-wrap{
+		max-width: 100%;
+	}
+}
+
+.main_header{
+	.section--menu {
+		margin: 0 auto;
+		@extend .full-width;
+		@include breakpoint(iPhoneSixLandscape){
+			max-width: calc(95% - 4rem);
+		}
+		@include breakpoint(tablet){
+			max-width: 100%;
+		}
+	}
+	nav {
+		padding-top: 3.5rem;
+		margin-bottom: 0;
+		margin-left: calc(3rem - #{$min-unit});
+		position: relative;
+		@include breakpoint(midSmallMob){
+			margin-bottom: $minor-unit;
+		}
+		@include breakpoint(phablet){
+			margin-left: calc(3rem - 1rem);
+		}
+		@include breakpoint(iPhoneSixLandscape){
+			padding-top: calc(4.5rem + 4px);
+			margin-bottom: calc(3rem - 2.7rem);
+			margin-left: calc(3rem - 2rem);
+		}
+		@include breakpoint(tabletSmall){
+			padding-top: calc(4.5rem + .5rem);
+			margin-bottom: calc(3rem - 2.5rem);
+		}
+		@include breakpoint(tablet){
+			padding-top: 5rem;
+			margin-bottom: 0;
+			margin-left: 0;
+		}
+		@include breakpoint(laptop){
+			padding-top: 7rem;
+		}
+		@include breakpoint(widelargelaptop){
+			padding-top: 10rem;
+		}
+		@include breakpoint(xtraWidelargelaptop){
+			padding-top: 6.5rem;
+		}
+		.ctaHeader{
+			margin: 0;
+		}
+		.menu__list{
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			display: none;
+			@include breakpoint(tablet){
+				@include flexbox;
+				@include flexWrap(wrap);
+			}
+		}
+	}
+	.navbar-brand {
+		padding: 0;
+		height: 0;
+	}
+	.underline-border {
+	    max-width: 1.5rem;
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    z-index: 99;
+	    @include breakpoint(tablet){
+	    	max-width: 40%;
+	    }
+	}
+	.brand-logo {
+		bottom: 0;
+		right: 1rem;
+		@include breakpoint(tablet){
+			right: 0;
+		}
+	}
+}
+
+
+/*End Header Styles*/

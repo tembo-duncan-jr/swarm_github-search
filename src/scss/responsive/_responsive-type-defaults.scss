@@ -1,0 +1,94 @@
+/* h1 */
+
+h1 {
+    @include font-size(1.7);
+    line-height: 1.25;
+    @include breakpoint(phablet) {
+        @include font-size(1.9); 
+        line-height: 1.125;
+    }
+    @include breakpoint(tablet) {
+        @include font-size(2.1);
+        line-height: 1.05;
+        /* keep to a multiple of the 20px line height 
+    and something more appropriate for display headings */
+    }
+    @include breakpoint(laptop) {
+        @include font-size(2.9);
+    }
+}
+
+
+/* h2 */
+
+h2 {
+    @include font-size(1.4);
+    line-height: 1.15384615;
+    @include breakpoint(phablet) {
+        @include font-size(1.7);
+        line-height: 1.25;
+    }
+    @include breakpoint(tablet) {
+        @include font-size(1.9);
+    }
+    @include breakpoint(laptop) {
+        @include font-size(2.15);
+    }
+}
+
+
+/* h3 */
+
+h3 {
+    @include font-size(1.365);
+    line-height: 1.13636364;
+
+    @include breakpoint(phablet) {
+        @include font-size(1.4);
+
+        line-height: 1.25;
+    }
+    @include breakpoint(tablet) {
+        @include font-size(1.65);
+    }
+}
+
+
+/* h4 */
+
+h4 {
+    @include font-size(1.115);
+    line-height: 1.11111111;
+    @include breakpoint(phablet) {
+        line-height: 1.22222222;
+    }
+}
+
+/* h5 */
+
+h5 {
+    @include font-size(0.865);
+    line-height: 1;
+    @include breakpoint(phablet) {
+        line-height: 1.2;
+    }
+}
+
+
+/* p */
+
+p {
+    @include font-size(0.803);
+    line-height: 1.5;
+}
+
+/* blockquote */
+
+blockquote {
+    @include font-size(1.15);
+    line-height: 1.25;
+    @include breakpoint(phablet) {
+        @include font-size(1.4);
+        line-height: 1.45833333;
+    }
+}

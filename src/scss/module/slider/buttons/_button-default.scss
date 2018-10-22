@@ -1,0 +1,46 @@
+.control-btn-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 9999;
+    @include transform(translate(-50%, -100%));
+    @include breakpoint(phablet) {
+        left: 2rem;
+        @include transform(translate(0, -50%));
+    }
+    @include breakpoint(tablet) {
+        left: 0;
+        bottom: 2rem;
+        position: relative;
+        @include transform(translate(0, 0));
+    }
+    button {
+        border: none;
+        @include rgba-background($accent-color, 0);
+        @include transition(all 0.3s $main-easing);
+        @include rgba-color($primary-color, 1);
+        &:hover {
+            @include rgba-color($accent-color, 0.8);
+        }
+    }
+    .slick-prev {
+        &::before {
+            content: '\2039';
+            text-shadow: 60px 0px transparent, 0 0 #FFF;
+        }
+    }
+    .slick-next {
+        &::before {
+            content: '\203A';
+            text-shadow: -60px 0px transparent, 0 0 #FFF;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        &::before {
+            bottom: 1px;
+            position: relative;
+            @include font-size(2);
+        }
+    }
+}

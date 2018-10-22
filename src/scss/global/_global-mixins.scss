@@ -1,0 +1,609 @@
+/* -- font mixins - helvetica defaults -- */
+ 
+/* fonts custom*/
+/* light*/
+@mixin prime-ff-custom-light {
+    font-family: 'montserratlight', Tahoma,Verdana,Segoe,sans-serif;
+}
+/* medium*/
+@mixin prime-ff-custom-med {
+    font-family: 'montserratmedium', Tahoma,Verdana,Segoe,sans-serif;
+}
+/* regular*/
+@mixin prime-ff-custom-reg {
+    font-family: 'montserratregular', Tahoma,Verdana,Segoe,sans-serif;
+}
+/* bold*/
+@mixin prime-ff-custom-bold {
+    font-family: 'montserratbold', Tahoma,Verdana,Segoe,sans-serif; 
+}
+/* thin*/
+@mixin prime-ff-custom-thin {
+    font-family: 'montserratthin', Tahoma,Verdana,Segoe,sans-serif; 
+}
+
+/* custom*/
+@mixin customHeader {
+    font-family: 'Abril Fatface', cursive; 
+}
+@mixin customBody {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* font size rem calculate */
+
+@mixin font-size($sizeValue: 1.6) {
+    font-size: ($sizeValue * 10) + px;
+    font-size: $sizeValue + rem;
+}
+
+
+/* line height calculate */
+
+@mixin line-height($heightValue: 12) {
+    line-height: $heightValue + px;
+    /*fallback for old browsers*/
+    line-height: (0.125 * $heightValue) + rem;
+}
+
+
+/* -- end font mixins -- */
+
+
+/* ---- background / colors */
+
+
+/* background color mixin*/
+
+@mixin rgba-backgroundColor($hexcolor, $opacity) {
+    background-color: $hexcolor;
+    background-color: rgba($hexcolor, $opacity);
+}
+
+
+/* background mixin*/
+
+@mixin rgba-background($hexcolor, $opacity) {
+    background: $hexcolor;
+    background: rgba($hexcolor, $opacity);  
+}
+
+
+/* color mixin*/
+ 
+@mixin rgba-color($hexcolor, $opacity) {
+    color: $hexcolor;
+    color: rgba($hexcolor, $opacity);
+}
+
+
+/* end ---- background / colors*/
+
+
+/* transforms*/
+
+
+/* generic transform*/
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+            transform: $transforms;
+}
+
+@mixin userSelect($userSelect) {
+    -webkit-user-select: $userSelect;
+       -moz-user-select: $userSelect; 
+        -ms-user-select: $userSelect;
+            user-select: $userSelect;
+}
+
+/* generic transform*/
+@mixin transform-generic($transforms) {
+      -webkit-transform: $transforms;
+              transform: $transforms;
+}
+/* rotate*/
+@mixin rotate ($deg) {
+  @include transform-generic(rotate(#{$deg}deg));
+}
+ 
+/* scale*/
+@mixin scale($scale) {
+     @include transform-generic(scale($scale));
+} 
+/* translate*/
+@mixin translate ($x, $y) {
+   @include transform-generic(translate($x, $y));
+}
+/* skew*/
+@mixin skew ($x, $y) {
+   @include transform-generic(skew(#{$x}deg, #{$y}deg));
+}
+/*transform origin*/
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+        -webkit-transform-origin: $origin;
+                transform-origin: $origin;
+}
+
+/* rotate*/
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+/* scale*/
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin multiScale($scaleX, $scaleY) {
+    -webkit-transform: scale($scaleX, $scaleY);
+            transform: scale($scaleX, $scaleY);
+}
+
+/* translate*/
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+
+/* skew*/
+
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+/*transform origin*/
+
+/* flexbox */
+
+@mixin flexbox {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+}
+
+@mixin flexflow($row) {
+    -ms-flex-flow: $row;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-flow: $row;
+}
+
+@mixin flexWrap($wrap) {
+    -ms-flex-wrap: $wrap;
+            flex-wrap: $wrap;
+}
+
+/* order*/
+
+@mixin flex-order($order) {
+    -ms-flex-order: $order;
+            -webkit-box-ordinal-group: $order;
+            order: $order;
+}
+
+/* end flexbox */
+
+/* Placeholder @mixin for Sass*/
+/**/
+/* A mixin to style placeholders in HTML5 form elements.*/
+/* Includes also a .placeholder class to be used with a polyfill e.g.*/
+/* https://github.com/mathiasbynens/jquery-placeholder*/
+/* Requires Sass 3.2.*/
+/**/
+/* Example usage (.scss):*/
+/* */
+/* input {*/
+/*   @include placeholder {*/
+/*     *//* styles for placeholder here *//**/
+/*   }*/
+/* }*/
+/**/
+
+@mixin placeholder { 
+  /* &.placeholder { @content }*/
+  /* &:-moz-placeholder { @content }*/
+  /* &::-webkit-input-placeholder { @content }*/
+  
+  /* ===*/
+  
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */ 
+        @content
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       @content
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+       @content
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+       @content
+    }
+}
+
+/* opacity */
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+    /*IE8*/
+}
+
+/* Opacity should be on a 100 point scale (0-100 instead of 0.0-1.0)*/
+/* This should be used to supplement a normal border definition as it*/
+/* only deals with the 'border-color' property.*/
+@mixin border-opacity($color, $opacity) {
+    $opacity: $opacity / 100;
+
+    /* Unsupporting browsers get this*/
+    border-color: $color;
+
+    /* Browsers that support RGBA will get this instead*/
+    border-color: rgba($color, $opacity);
+
+    /* Prevent the element's background from reaching the edge of the border*/
+    background-clip: padding-box;
+}
+
+/* end opacity */
+
+/* Center-align a block level element*/
+
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin total-center {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+/* flex align*/
+@mixin flexAlignCenter($center) {
+    -webkit-align-items: $center;
+    -ms-flex-align: $center;
+    -ms-grid-row-align: $center;
+    -webkit-box-align: $center;
+            align-items: $center;
+}
+
+@mixin alignSelf($selfVal) {
+    -ms-flex-item-align: $selfVal;
+    -ms-grid-row-align: $selfVal;
+        align-self: $selfVal;
+}
+
+
+
+/* Justify Content*/
+@mixin justifyContentVal($justval) {
+    -ms-flex-pack: $justval;
+            -webkit-box-pack: $justval;
+            justify-content: $justval;
+}
+
+@mixin justifyContentCenter($center) {
+    -ms-flex-pack: $center;
+            -webkit-box-pack: $center;
+            justify-content: $center;
+}
+
+@mixin justifyContentFlexEnd {
+    -ms-flex-pack: end;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+}
+
+@mixin justifyContentFlexStart {
+    -ms-flex-pack: start;
+        -webkit-box-pack: start;
+            justify-content: flex-start;
+}
+
+@mixin justifySpaceAround {
+    -ms-flex-pack: distribute;
+            justify-content: space-around;
+}
+
+@mixin justifySpaceBetween {
+    -ms-flex-pack: justify;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+}
+
+/* end center-align a block level element*/
+
+/* border radius*/
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+}
+
+/* Single side border-radius*/
+
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+}
+
+
+/* end border radius*/
+
+/* absolute  positioning*/
+
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+}
+
+
+/* transitions*/
+@mixin trans_delay ($val){
+  -webkit-transition-delay: $val;
+  transition-delay: $val;
+}
+
+@mixin all_trans {
+    @include transition(all .3s $easeInOutSine);
+}
+
+@mixin time_ease_trans ($time) {
+    @include transition(all $time $easeInOutSine);
+}
+
+@mixin custom_trans($prop, $dur ) {
+    @include transition($prop $dur $easeInOutSine);
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    transition: $args;
+}
+
+@mixin transition_loop($valNum, $timingFunc, $dur) {
+  @for $i from 1 through $valNum {
+    &:nth-child(#{$i}) {
+      -webkit-transition: all $dur $timingFunc #{$i * .25}s;
+      transition: all $dur $timingFunc #{$i * .25}s;
+    }
+  }
+}
+
+/* end transitions*/
+
+/* item child selectors*/
+
+/* Nth-child - https://paulund.co.uk/nth-child-sass-mixins*/
+
+/* First Child*/
+@mixin first-child() {
+  &:first-of-type {
+    @content
+  }
+}
+
+/* Last Child*/
+@mixin last-child() {
+  &:last-of-type {
+    @content
+  }
+}
+
+/* Evens*/
+@mixin even(){
+  &:nth-child(even) {
+    @content
+  }
+}
+
+/* Odds*/
+@mixin odd(){
+  &:nth-child(odd) {
+    @content
+  }
+}
+
+/* Select The First nth Elements*/
+@mixin first($num) {
+
+  @if $num == 1 {
+    &:first-child {
+      @content;
+    }
+  }
+
+  @else {
+    &:nth-child(-n + #{$num}) {
+      @content;
+    }
+  }
+}
+
+/* Select The Last nth Elements*/
+@mixin last($num) {
+   &:nth-last-child(-n + #{$num}) {
+    @content;
+  }
+}
+
+/* Select After nth Elements*/
+@mixin after($num) {
+  &:nth-child(n+#{$num + 1}) {
+    @content
+   }
+}
+
+/* Select From Last Elements*/
+@mixin from-end($num) {
+  &:nth-last-child(#{$num}) {
+   @content
+  }
+}
+
+/* Select Between Two Elements*/
+@mixin between($first,$last) {
+  &:nth-child(n+#{$first}):nth-child(-n+#{$last}) {
+    @content
+  }
+}
+
+/* Select All But One*/
+@mixin all-but($num) {
+  &:not(:nth-child(#{$num})) {
+    @content
+  }
+}
+
+/* Select Every nth*/
+@mixin each($num) {
+  &:nth-child(#{$num}n) {
+    @content
+  }
+}
+
+/* not last child selector*/
+
+@mixin not-last-child($selector) {
+    & #{$selector}:not(: last-child) {
+        @content;
+    }
+}
+
+/* SPACING */
+
+
+/* Padding shorthand version*/
+
+@mixin padding($padding) {
+    padding: $padding;
+}
+
+/* Padding longhand version*/
+
+@mixin padding-all($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+/* Margin shorthand version*/
+
+@mixin margin($margin) {
+    margin: $margin;
+}
+
+/* Margin longhand version*/
+
+@mixin margin-all($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+/*============================================================*/
+/* Transforms*/
+/*============================================================*/
+
+@mixin backface-visibility ($arguments) {
+  -webkit-backface-visibility: $arguments;
+          backface-visibility: $arguments;
+}
+
+
+/*============================================================*/
+/* Animations*/
+/*============================================================*/
+
+@mixin animationName($animName) {
+    -webkit-animation-name: $animName;
+            animation-name: $animName;
+}
+
+@mixin animationDelay($animDelay) {
+    -webkit-animation-delay: $animDelay;
+            animation-delay: $animDelay;
+} 
+
+@mixin animationDuration($animDur) {
+    -webkit-animation-duration: $animDur;
+            animation-duration: $animDur;
+}
+
+@mixin animationIteration($animIter) {
+    -webkit-animation-iteration-count: $animIter;
+            animation-iteration-count: $animIter;
+}
+
+@mixin transition($arguments...) {
+    -webkit-transition: $arguments;
+    transition: $arguments;
+}
+
+@mixin animation($arguments) {
+  -webkit-animation: $arguments;
+          animation: $arguments;
+}
+
+/*============================================================*/
+/* Gradients*/
+/*============================================================*/
+
+@mixin linear-gradient ($from, $to) {
+  background-color: $from; /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+  background-image:         -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background-image:         linear-gradient(to bottom, $from, $to); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+/*============================================================*/
+/* Structure*/
+/*============================================================*/
+
+@mixin box-sizing ($arguments) {
+  -o-box-sizing: $arguments;
+     -webkit-box-sizing: $arguments;
+          box-sizing: $arguments;
+}
+
+/* Background Gradient: Radial*/
+
+@mixin bg-radial($start-colour, $start-position, $end-colour, $end-position) {
+    background: radial-gradient(ellipse at center, $start-colour $start-position, $end-colour $end-position);
+}

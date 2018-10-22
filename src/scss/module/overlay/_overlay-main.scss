@@ -1,0 +1,55 @@
+.overlay_main,
+.overlay_wrap {
+	@extend .default-transition;
+}
+
+.input-group-btn {
+    &.cta-enter {
+    	@extend .default-transition;
+        position: absolute;
+        bottom: -1rem;
+        max-width: 60%;
+        z-index: 99999;
+        @extend .trans_center-x;
+        @include breakpoint(midSmallMob) {
+        	bottom: -1rem;
+        }
+        @include breakpoint(iPhoneSixLandscape) { 
+			bottom: -1rem;
+        }
+    }
+}
+
+.overlay_main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	pointer-events: none;
+	@include opacity(0);
+	@include scale(.9);
+	&.is-active {
+		@include opacity(1);
+		@include scale(1);
+		pointer-events: all;
+		@include rgba-background($body-color * .7, 1);
+	}
+	&.is-active .overlay_wrap {
+		@include opacity(1);
+	}
+	.overlay_wrap {
+		width: 90%;
+		height: 90%;
+		@include border-radius(2px);
+		@include opacity(0);
+		@include rgba-background($primary-color-white, 1);
+		position: absolute;
+		z-index: 99999;
+		@extend .abso-pos-center;
+		@include breakpoint(midSmallMob) {
+			height: 95%;
+		}
+	}
+}

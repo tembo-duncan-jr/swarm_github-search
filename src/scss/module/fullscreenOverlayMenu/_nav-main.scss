@@ -1,0 +1,19 @@
+@import
+// defaults
+"module/fullscreenOverlayMenu/menu-defaults";
+
+/* override*/
+.overlay {
+	.menu__item {
+		@include all-but(1) { 
+			margin: 0;
+		}
+	}
+	li {
+		.menu__link {
+			padding: .5rem 0;
+		}
+	}
+}
+
+

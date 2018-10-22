@@ -1,0 +1,141 @@
+.object-fit_fill {
+    object-fit: fill;
+}
+
+.object-fit_contain {
+    object-fit: contain;
+}
+
+.object-fit_cover {
+    object-fit: cover;
+}
+
+.object-fit_none {
+    object-fit: none;
+}
+
+.object-fit_scale-down {
+    object-fit: scale-down;
+}
+
+
+/* Page Defaults */
+
+.clearfix {
+    &:before,
+    &:after {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Page Defaults */
+
+ul {
+    @include margin-all(0, 0, 0, 0);
+    @include padding-all(0, 0, 0, 0);
+    li {
+        list-style: none;
+    }
+}
+
+/* scroll magic */
+
+.scrollmagic-pin-spacer,
+.component-fullwidth {
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.component-fullwidth {
+    left: auto !important;
+    right: auto !important;
+    /* border-top: 1px solid;*/
+    /* @include border-opacity($primary-color, 100);*/
+    @include breakpoint(iPhone-6-6S_port){
+        margin-top: -2rem !important;
+    } 
+    @include breakpoint(iPhone6Port){
+        margin-top: 2rem !important;
+    }
+    @include breakpoint(midSmallMob){
+        margin-top: 2rem !important;
+    }
+    @include breakpoint(phablet){
+        margin-top: 4.5rem !important;
+    }
+    @include breakpoint(surfacePro2){
+        margin-top: 6rem !important;
+    }
+    @include breakpoint(iPhone-6-Plus_landscape){
+        margin-top: 5rem !important;
+    }
+    @include breakpoint(tabletSmall){
+        margin-top: 5.5rem !important; 
+    }
+    @include breakpoint(tablet){
+        margin-top: calc(-7rem + 3px) !important;
+    }
+    @include breakpoint(laptop){
+        margin-top: -2rem !important;
+    }
+    @include breakpoint(widelargelaptop){
+        margin-top: 0 !important;
+    }
+    @include breakpoint(iPadGen3_-_4_-_5){
+        margin-top: -8rem !important;
+    }
+    @include breakpoint(xtraWidelargelaptop){
+        margin-top: -2.5rem !important;
+    }
+    @include breakpoint(largedesktop){
+        margin-top: -3.5rem !important;
+    }
+    @include breakpoint(xtralargedesktop){
+        margin-top: -5.5rem !important;
+    }
+    &.slider-component2 {
+        @include breakpoint(iPhone-6-6S_port){
+            margin-top: 0 !important;
+        }
+        @include breakpoint(midSmallMob){
+            margin-top: 2rem !important;
+        }
+        @include breakpoint(tabletSmall){
+            margin-top: 5.5rem !important;
+        }
+    }
+    &.slider-component2,
+    &.slider-component3 {
+        @include breakpoint(microsoft-Lumia-1520){
+            margin-bottom: 1rem;
+        }
+        @include breakpoint(tabletSmall){
+            margin-bottom: 2rem;
+        }
+        @include breakpoint(tablet){
+            margin-top: -6.5rem !important;
+            margin-bottom: 1rem;
+        }
+        @include breakpoint(laptop){
+            margin-top: 0 !important;
+        }
+        @include breakpoint(iPadGen3_-_4_-_5){
+            margin-top: -9rem !important;
+        }
+        @include breakpoint(xtraWidelargelaptop){
+            margin-top: -1.5rem !important;
+        }
+    }
+}

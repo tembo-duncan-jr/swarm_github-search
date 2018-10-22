@@ -1,0 +1,36 @@
+.selector {
+    figure:not(*:root) {
+        /* styles here*/
+    }
+}
+
+/* font replacement */
+.light,
+.thin {
+    &:not(*:root),
+    &:not(*:root) {
+        @include breakpoint(mobiletabletonly) {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+    }
+}
+
+.bold {
+    &:not(*:root) {
+        @include breakpoint(mobiletabletonly) {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+}
+
+* {
+    &:not(*:root) {
+        text-rendering: auto;
+    }
+}
+
+

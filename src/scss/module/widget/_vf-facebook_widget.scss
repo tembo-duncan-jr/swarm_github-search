@@ -1,0 +1,23 @@
+.vf-facebook_widget {
+	.fb_iframe_widget {
+		> span {
+			    width: 400px !important;
+			    iframe {
+			    	width: 100% !important;
+			    	body { 
+			    		&.plugin {
+			    			min-width: 400px !important;  
+			    			#u_0_0 {
+				    			div {
+				    				&._2p3a { 
+				    					width: 100% !important;
+				    				}
+				    			}
+			    			}
+			    		}
+			    	}
+			    }
+			    
+		}
+	}
+}

@@ -1,0 +1,184 @@
+.block_wrap-main {
+	@include flexbox;
+	@include flexflow(column);
+	@include breakpoint(tablet){
+		@include flexflow(row);
+	}
+	&.max-contain {
+		margin: 0 auto;
+		@include breakpoint(upperEndlaptop){
+			/* max-width: calc(90% + 3.5rem);*/
+			max-width: 100%;
+		}
+	}
+	&.default-max-contain {
+		@extend .default-max-width;
+	}
+	&.innerJustify {
+		@include breakpoint(tablet){ 
+			@include justifyContentFlexStart;
+			.block_wrap-item{
+				padding-bottom: calc(2rem + #{$min-unit});
+			}
+		}
+		@include breakpoint(tablet){ 
+			.block_wrap-item{
+				padding-bottom: 1rem;
+			}
+		}
+	}
+	&.abso-centered {
+		@extend .abso-pos-center;
+		@extend .semiMid-width;
+	}
+	.block_wrap-item {
+		width: 100%;
+		&.max-half-w_spacer {
+			@include breakpoint(tablet){
+				max-width: calc(100% / 2 - 1rem);
+			}
+		}
+	}
+	&.aside_panel-wrap{
+		.block_wrap-item {
+			margin-bottom: 1.5rem; 
+		}
+		.content-spread-row {
+            padding-top: 0;
+        }
+	}
+	&.col-only {
+		@include flexflow(column);
+		&:not(:last-of-type) {
+			padding-bottom: 2rem; 
+		}
+		.block_wrap-item{
+			width: 100%;
+		}
+	}
+	
+	@include breakpoint(tablet){ 
+		&.block-wrap {
+			@include flexWrap(wrap);
+		}
+		&.space-between {
+			@include justifySpaceBetween;
+		}
+		&.block_wrap-2 {
+			.block_wrap-item {
+				width: calc(100% / 2);
+				&.block-spacer {
+					width: calc(100% / 2 - 2rem);
+					@include breakpoint(largelaptop){
+						width: calc(100% / 2 - 3rem);
+					} 
+				}
+			}
+		}
+		&.block_wrap-3 {
+			.block_wrap-item {
+				width: calc(100% / 3);
+				&.block-spacer {
+					width: calc(100% / 3 - 1rem);
+				}
+			}
+		}
+		&.block_wrap-4 {
+			.block_wrap-item {
+				width: calc(100% / 4);
+				&.block-spacer {
+					width: calc(100% / 4 - 1rem);
+				}
+			}
+		}
+		&.block_wrap-5 {
+			.block_wrap-item {
+				width: calc(100% / 5);
+				&.block-spacer {
+					width: calc(100% / 5 - 1rem);
+				}
+			}
+		}
+		&.block-full{
+			.block_wrap-item{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.content-spread{
+	width: 100%;
+	@include flexbox; 
+	@include justifySpaceBetween;
+	&.mob_col-row {
+		@include flexflow(column);
+		.mob_col-item{
+			&:not(:last-of-type) {
+				margin-bottom: 1rem;
+				@include breakpoint(tablet){
+					margin-bottom: 0;
+				}
+			}
+		}
+		@include breakpoint(tablet){
+			@include flexflow(row);
+		}
+	}
+	.info-item{
+		padding: 0;
+	}
+	&:not(:last-of-type) {
+		padding-bottom: .5rem;
+	}
+	&.left-wide {
+		@include flexflow(column);
+		@include breakpoint(tablet){
+			@include flexflow(row);
+		}
+		.spread_item{
+			width: 100%;
+			&:not(:last-of-type) {
+				padding-bottom: 1rem;
+				@include breakpoint(tablet){
+					padding-bottom: 0;
+				}
+			}
+			@include breakpoint(tablet){
+				padding-bottom: 1rem;
+				&:first-of-type {
+					padding-right: 1rem;
+					width: calc(100% - 20%);
+				}
+				&:last-of-type {
+					width: calc(100% - 80%);
+				}
+			}
+			@include breakpoint(largelaptop){
+				&:first-of-type {
+					width: calc(100% - 15%);
+				}
+				&:last-of-type {
+					width: calc(100% - 85%);
+				}
+			}
+		}
+	}
+	&.view-col_default {
+		@include flexflow(column); 
+		.spread_item{
+			&:not(:last-of-type) {
+				padding-bottom: 2rem;
+			}
+		}
+	}
+}
+
+.block_wrap-main,
+.block_wrap-item {
+	&.maxSmall {
+		@include breakpoint(tablet){
+			max-width: 40%;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+#pp-nav{
+	display: none;
+	@include breakpoint(laptop){
+		display: block; 
+	}
+}

@@ -1,0 +1,76 @@
+.control-btn-wrap {
+    z-index: 999;
+    /* top: 50%;*/
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    /* width: 100vw;*/
+    pointer-events: none;
+    @include flexbox;
+    @include flexflow(row);
+    @include justifySpaceBetween;
+    width: 100%;
+    /* @include transform(translateY(-50%));*/
+    .slick-prev {
+        &::before {
+            /* content: '\2039';*/
+            text-shadow: 60px 0px transparent, 0 0 #FFF;
+        }
+    }
+    .slick-next {
+        &::before {
+            /* content: '\203A';*/
+            text-shadow: -60px 0px transparent, 0 0 #FFF;
+        }
+    }
+    .slick-arrow {
+        &::before {
+            bottom: 0;
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            margin-top: calc(-10%);
+            @include font-size(5);
+            @include transform(translate(-50%, -50%));
+        }
+    }
+    button {
+        top: 50%;
+        min-width: 3rem;
+        max-height: 4.5rem;
+        min-height: 3rem;
+        
+        border: none;
+        z-index: 9999;
+        pointer-events: all;
+        @include rgba-background($primary-color, 0);
+        @extend .default-transition;
+        i {
+            @include rgba-color($primary-color, 1);
+            @include breakpoint(laptop){
+                @include rgba-color($primary-color-white, 1);
+            }
+        }
+        &::before {
+            @include rgba-color($primary-color, 1);
+            @include breakpoint(laptop){
+                @include rgba-color($primary-color-white, 1);
+            }
+        }
+        &:hover {
+            @include rgba-background($primary-color, 1);
+            &::before {
+                @include rgba-color($primary-color-white, 1);
+            }
+        }
+        &:hover i {
+            @include rgba-color($primary-color-white, 1);
+        }
+        @include breakpoint(phablet){
+            width: 3.5rem;
+        }
+        @include breakpoint(laptop){
+            @include rgba-background($primary-color-white, 0);
+        }
+    }
+}

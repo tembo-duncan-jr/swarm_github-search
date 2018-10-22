@@ -1,0 +1,76 @@
+/* default cta*/
+
+a,
+.cta-link,
+button,
+.button,
+input {
+    @extend .default-transition;
+}
+
+a,
+.cta-link,
+button,
+.button {
+    outline: 0 !important;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+a,
+button {
+    /* remember to define focus styles! */
+    &:focus {
+    outline: 0;
+    }
+}
+
+.close-cta_wrap {
+    margin: 0;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    .close-cta {
+        @include rgba-color($body-color, 1);
+        &:hover {
+            @include rgba-color($primary-color, 1);
+        }
+        i {
+            vertical-align: bottom;
+            font-size: inherit;
+        }
+    }
+}
+
+
+
+/* link / btn reset */
+a {
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+        text-decoration: none;
+        outline: 0;
+    }
+    &.innerLink {
+        @include rgba-color($primary-color, .8);
+        @include breakpoint(laptop){
+            color: inherit;
+            @include opacity(0.9);
+            &:hover {
+                text-decoration: none;
+                @include rgba-color($primary-color, 0.8);
+            }
+        }
+    }
+}
+
+.innerLink {
+    text-decoration: none;
+    @include opacity(0.75);
+    &:active {
+        @include rgba-color($primary-color * 1.4, 0.85);
+    }
+}

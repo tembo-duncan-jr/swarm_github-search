@@ -1,0 +1,36 @@
+.backgroundBannerDefault {
+    text-align: center;
+    background-size: cover;
+    margin-bottom: 0;
+}
+
+/* primary color shades */
+
+.bg_color {
+    &.primary-bg-c {
+        @include rgba-background($primary-color, 1);
+    }
+    &.primary-bg-c-white {
+        @include rgba-background($primary-color-white, 1);
+    }
+    &.primary-bg-c-offwhite {
+        @include rgba-background($primary-color-offwhite, 1);
+    }
+    &.primary-bg-c-dark {
+        @include rgba-background($site-color-dark, 1);
+    }
+    &.primary-bg-c-vDark {
+        @include rgba-background($site-color-dark * .7, 1);
+    }
+    &.primary-shade-light {
+        @include rgba-background($primary-shade-light, 1);
+    }
+    &.primary-bg-c-shade {
+        @include rgba-background($site-color-dark * 1.5, 0.9);
+    }
+    &.primary-bg-c-shade-solid {
+        @include rgba-background($site-color-dark * 1.5, 1);
+    }
+}
+
+/*end brand background colors*/

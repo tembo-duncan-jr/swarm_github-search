@@ -1,0 +1,14 @@
+.associate_block{
+	.block_wrap-main {
+		&.col-only {
+			.block_wrap-item{
+				&:nth-of-type(2) {
+					> .block_wrap-main{
+						@include flexflow(row);
+						@include flexWrap(wrap); 
+					}
+				}
+			}
+		}
+	}
+}

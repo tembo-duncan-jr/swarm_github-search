@@ -1,0 +1,157 @@
+.item_large-wrap {
+    &.hero-item {
+        position: absolute;
+        .icon-wrap {
+            max-width: 100%;
+        }
+    }
+    &.hero_product {
+        max-width: 30%;
+        top: auto;
+        right: auto;
+        bottom: 22rem;
+        left: 50%;
+        z-index: 9999;
+        @include transform(translateX(-50%));
+        @include breakpoint(iPhone-6-6S_port) {
+            bottom: 26rem;
+        }
+        @include breakpoint(midSmallMob) {
+            bottom: 12rem;
+            max-width: 20%;
+            left: calc(15% - .5rem);
+        }
+        @include breakpoint(iPhoneLandscape) {
+            bottom: 10rem;
+        }
+        @include breakpoint(phablet) {
+            bottom: 40rem;
+            left: 50%;
+            max-width: 30%;
+        }
+        @include breakpoint(iPhoneSixLandscape) {
+            bottom: 12rem;
+            max-width: 20%;
+            left: calc(15% + 1rem);
+        }
+        @include breakpoint(surfacePro2) { 
+            bottom: 16rem;
+            max-width: calc(20% - 2rem);
+            left: calc(15% - .5rem);
+        }
+        @include breakpoint(tabletSmall) {
+            left: 50%;
+            max-width: calc(30%);
+            bottom: 40rem;
+        }
+        @include breakpoint(tablet) {
+            max-width: 40%;
+            top: 25%;
+            right: -2rem;
+            left: auto;
+            bottom: auto;
+            @include transform(translateY(-50%) translateX(0));
+        }
+        @include breakpoint(laptop) {
+            top: 50%;
+            max-width: 30%;
+            right: 2rem;
+        }
+        @include breakpoint(largelaptop) {
+            max-width: 30%;
+            right: 2rem;
+        }
+        @include breakpoint(widelargelaptop) {
+            max-width: calc(30% + 2rem);
+            right: 5%;
+        }
+    }
+    &.hero_brand-logo {
+        top: -1rem;
+        right: -1.5rem;
+        z-index: 999;
+        width: 100%;
+        max-width: 50%;
+        pointer-events: none;
+        @extend .default-transition;
+        @include opacity(.1);
+        @include breakpoint(iPhone-6-6S_port) {
+            max-width: 60%;
+        }
+        @include breakpoint(surfacePro2) { 
+            top: -2rem;
+            right: -2.5rem;
+        }
+        @include breakpoint(tablet) {
+            @include opacity(1);
+            top: -5%;
+            right: -30%;
+            max-width: 80%;
+        }
+        @include breakpoint(laptop) {
+            top: -15%;
+            right: -40%;
+            max-width: 90%;
+        }
+        @include breakpoint(upperEndlaptop) {
+            top: -1.5rem;
+            right: -6rem;
+            max-width: 65%;
+        }
+        @include breakpoint(largelaptop) {
+            right: -10%;
+        }
+        @include breakpoint(widelargelaptop) {
+            right: -20%;
+            max-width: 60%; 
+        }
+        @include breakpoint(iPadGen3_-_4_-_5) {
+            max-width: 80%; 
+        }
+        @include breakpoint(xtraWidelargelaptop) {
+            max-width: 60%; 
+            right: -20%; 
+        }
+        @include breakpoint(largedesktop) {
+            right: -10%;
+            max-width: 60%;
+        }
+        @include breakpoint(xtralargedesktop) {
+            top: -4rem;
+            max-width: 50%;
+        }
+        @include breakpoint(largeTV) {
+            max-width: 60%;
+            right: -15%; 
+        }
+        .st0 {
+            fill: $primary-color;
+        }
+    }
+    &.hero_brand-logo_footer {
+        z-index: 9999;
+        max-width: 4rem;
+        bottom: 1rem;
+        right: 1rem;
+        @include breakpoint(tabletSmall) { 
+            bottom: 1.5rem;
+            right: 1.5rem;
+            max-width: 7rem;
+        }
+        @include breakpoint(tablet) {
+            max-width: 8rem;
+            bottom: 12rem;
+            right: 6rem;
+        }
+        @include breakpoint(laptop) {
+            bottom: 2rem;
+            right: 2rem;
+        }
+        .st0 {
+            fill: $primary-color;
+        }
+        .st1 {
+            fill: $body-color;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.facebook .socialLink:hover {
+     background-color: #3b5998;
+     background-color: rgba(59, 89, 152, 0.75);
+     box-shadow: inset 0 0 30px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .twitter .socialLink:hover {
+     background-color: #00aced;
+     background-color: rgba(0, 172, 237, 0.75);
+     box-shadow: inset 0 0 30px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .instagram .socialLink:hover {
+     background-color: #517fa4;
+     background-color: rgba(81, 127, 164, 0.75);
+     box-shadow: inset 0 0 30px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .linkedIn .socialLink:hover {
+     background-color: #007bb6;
+     background-color: rgba(0, 123, 182, 0.75);
+     box-shadow: inset 0 0 30px 5px rgba(0, 0, 0, 0.1);
+ }
+ /*social icon styles*/
+ 
+ .fbSocialLink {
+     padding: .75rem .625rem .313rem 2.188rem;
+ }
+ 
+ .twtrSocialLink {
+     padding: .75rem 1rem .4rem;
+ }
+ 
+ .igSocialLink {
+     padding: .75rem 1.12rem .43rem;
+ }
+ 
+ .lnkdInSocialLink {
+     padding: .75rem 1.12rem .43rem;
+ }
+ /*end social icon styles*/
+
+ .iconTitleText {
+     /* For improved SEO content crawling - Hide text elements - Text is present, but not displayed (may need revision) */
+     display: none;
+ }

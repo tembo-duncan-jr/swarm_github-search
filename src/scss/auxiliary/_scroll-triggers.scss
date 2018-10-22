@@ -1,0 +1,9 @@
+/* place trigger selectors here */
+.trigItem {
+	position: absolute;
+	top: 85%;
+	left: 0;  
+	&.contentBlock-1 {
+		top: 30%;
+	}
+}

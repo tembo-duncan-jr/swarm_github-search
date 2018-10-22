@@ -1,0 +1,231 @@
+ /* scroll magic scenes*/
+
+/* === pages*/
+
+/* anim stack*/
+@import 
+"global/scrollMagic-animStack";
+
+.sliderComponentWrap {
+	@extend .trans-dur_slow;
+	@include breakpoint(tablet){
+		@include opacity(1);
+		@include transform(translateY(0)); 
+		transition-delay: .4s; 
+		&.elm-exit {
+			@include opacity(0);
+			@include transform(translateY(10%)); 
+		}
+	}
+	@include breakpoint(laptop){
+		transition-delay: .1s; 
+	}
+}
+
+/* about*/
+#introQuote1-wrap {
+	@include opacity(0);
+	@include transform(translateY(10%));
+	&.fade-in {
+		@include opacity(1);
+		@include transform(translateY(0));
+	}
+}
+
+/* contact page*/
+#introQuote3-wrap {
+	@include opacity(0); 
+	@include transform(translateY(10%));
+	&.elm-enter {
+		@include opacity(1);
+		@include transform(translateY(0));
+	}
+}
+
+#contactUs {
+	@include opacity(0); 
+	@include transform(translateY(10%));
+	&.elm-enter {
+		@include opacity(1);
+		@include transform(translateY(0));
+	}
+}
+
+/* #contentBlock1 {*/
+/* 	.textBlock{*/
+/* 		.bodyPara {*/
+/* 			@include transition_loop(3, $easeInOutSine, .6s);*/
+/* 			@include opacity(0);*/
+/* 			@include transform(translateY(10%));*/
+/* 		}*/
+/* 		&.elm-enter .bodyPara {*/
+/* 			@include opacity(1);*/
+/* 			@include transform(translateY(0));*/
+/* 		}*/
+/* 	}*/
+/* }*/
+
+#contactMiscBlock1 {
+	@include opacity(0); 
+	@include scale(.95);
+	&.elm-enter {
+		@include opacity(1);
+		@include scale(1);
+	}
+}
+
+#contactMiscBlock1_2 {
+	@include opacity(0); 
+	@include scale(.95);
+	@extend .trans-dur_slow;
+	&.elm-enter {
+		@include opacity(1);
+		@include scale(1);
+	}
+}
+
+#contactMiscBlock1_3 {
+	@include opacity(0); 
+	@include transform(translateX(-5%));
+	@extend .trans-dur_fast;
+	&.elm-enter {
+		@include opacity(1);
+		@include transform(translateX(0));
+	}
+}
+
+#contactMiscBlock1_4 {
+	@include opacity(0); 
+	@include transform(translateX(-5%));
+	@extend .trans-dur_fast;
+	&.elm-enter {
+		@include opacity(1);
+		@include transform(translateX(0));
+	}
+}
+
+#contactMiscBlock1_5 {
+	@include opacity(0); 
+	@include scale(.95);
+	@extend .trans-dur_slow;
+	@extend .trans-delay-v-slow; 
+	&.elm-enter {
+		@include opacity(1);
+		@include scale(1);
+	}
+}
+
+.about_page{
+	.content-block_wrapper {
+		/* @include opacity(0);*/
+		/* @include transform(translateY(10%));*/
+		@extend .trans-dur_slow;
+		transition-delay: .2s;
+		&.elm-enter {
+			@include opacity(1);
+			@include transform(translateY(0));
+		}
+		.imgWrap {
+			@include opacity(0);
+		}
+	}
+	#miscBlock1,
+	#miscBlock2,
+	#miscBlock3{
+		&.imgWrap {
+			@include opacity(0);
+			transition-timing-function: $easeInOutCubic;
+			&.elm-enter {
+				@include opacity(1);
+			}
+		}
+	}
+	#miscBlock1 {
+		&.imgWrap {
+			@include scale(.95);
+			transition-delay: .25s;
+			@extend .trans-dur_slow;
+			&.elm-enter {
+				@include scale(1);
+			}
+		}
+	}
+	#miscBlock2,
+	#miscBlock3 {
+		&.imgWrap {
+			@extend .trans-dur_slow;
+			@include transform(translateY(5%));
+			&.elm-enter {
+				@include transform(translateY(0));
+			}
+		}
+	}
+	#miscBlock2 {
+		&.imgWrap {
+			@include breakpoint(tablet){
+				transition-delay: .25s;
+			}
+		}
+	}
+}
+
+
+/* team*/
+.team_page {
+    .block_wrap-main {
+        .panel-wrap {
+            @extend .trans-dur_slow;
+            @include opacity(0);
+            @include transform(translateY(5%));
+            &.elm-enter {
+                @include opacity(1);
+                @include transform(translateX(0));
+            }
+        }
+    }
+    #miscBlock4,
+	#miscBlock5 {
+		&.imgWrap {
+			@extend .trans-dur_slow;
+			@include opacity(0);
+			@include scale(.95);
+			&.elm-enter {
+				@include opacity(1);
+				@include scale(1);
+			}
+		}
+	}
+	.associate_block{
+		.partner-logo_wrap {
+			@extend .trans-dur_slow;
+			@extend .trans-delay-slow;
+			@include opacity(0);
+			@include scale(.95);
+			&.elm-enter {
+				@include opacity(1);
+				@include scale(1);
+			}
+		}
+	}
+	#introQuote2-wrap {
+		&.textBlock {
+            @extend .trans-dur_slow;
+            @include opacity(0);
+            @include transform(translateY(5%));
+            &.elm-enter {
+                @include opacity(1);
+                @include transform(translateX(0));
+            }
+		}
+	}
+	#sectionHeader {
+		@extend .default-transition;
+		@include opacity(0);
+		&.elm-enter {
+			@include opacity(1);
+		}
+	}
+}
+
+
+/* contact page*/

@@ -1,0 +1,11 @@
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@import
+/* text styling */
+"global/type/type-styles",
+/* responsive type*/
+"responsive/responsive-type-defaults";  

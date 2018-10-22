@@ -1,0 +1,183 @@
+.associate_block {
+	@include rgba-background($primary-color-offwhite, 1); 
+	.block_wrap-main {
+		&.block-wrap {
+			min-height: 300px;
+			> .block_wrap-item{
+				margin: 0 !important;
+				position: relative;
+				@include transform(translateY(0));
+				@include breakpoint(mobiletabletonly){
+					width: calc(100% / 2);
+				}
+				&:not(:last-of-type) {
+					padding-bottom: 2rem;
+					@include breakpoint(tablet) {
+						padding-bottom: 3rem;
+					}
+					@include breakpoint(laptop) {
+						padding-bottom: 4rem;
+					}
+				}
+				@include from-end(2) {
+					@include transform(translateY(-3rem));
+					@include breakpoint(tablet) {
+						@include transform(translateY(-20%));
+					}
+					@include breakpoint(laptop) {
+						@include transform(translateY(0));
+					}
+				}
+			}
+		}
+		.textBlock{
+			.section_header,
+			.sub_header {
+				@include rgba-color($primary-color-white, 1); 
+			}
+			text-align: center;
+		}
+		&.col-only {
+			padding-top: $min-unit;
+			padding-bottom: 0;
+			@include breakpoint(tablet){
+				padding-top: 4rem;
+				/* padding-bottom: 4rem;*/
+			}
+			@include breakpoint(laptop){
+				padding-bottom: 6rem;
+			}
+			> .block_wrap-item {
+				&:first-of-type {
+					padding-bottom: 1rem;
+					@include breakpoint(tablet){
+						padding-bottom: 0;
+					}
+					@include breakpoint(upperEndlaptop){
+						padding-bottom: 5rem;
+					}
+					@include breakpoint(largelaptop){
+						padding-bottom: 4rem;
+					}
+					@include breakpoint(xtraWidelargelaptop){
+						padding-bottom: 8rem;
+					}
+					.textBlock{
+						padding-left: 1rem;
+						@include breakpoint(tablet){
+							padding: 0;
+						}
+					}
+					.section_header{
+						text-align: center;
+						@include breakpoint(laptop){
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.partner-logo_wrap{
+	@include flexbox;
+	@include flexflow(column);
+	position: relative;
+	min-height: 190px;
+	max-width: calc(95% - 1.5rem);
+	margin: 0 auto;
+	&.landscape-block {
+		min-height: 140px;
+		@include breakpoint(tablet){
+			min-height: 180px;
+		}
+		@include breakpoint(laptop){
+			min-height: 200px;
+		}
+	}
+	@include breakpoint(phablet){
+		max-width: calc(85% - 2rem);
+	}
+	@include breakpoint(iPhoneLandscape){
+		max-width: calc(80% - 2rem);
+	}
+	@include breakpoint(iPhone-6-Plus_landscape){
+		max-width: calc(85% - 5rem);
+	}
+	@include breakpoint(tablet){
+		min-height: 200px;
+		max-width: 40%;
+	}
+	@include breakpoint(laptop){
+		max-width: 75%;
+	}
+	@include breakpoint(upperEndlaptop){
+		max-width: 80%;
+	}
+	@include breakpoint(largelaptop){
+		max-width: 70%;
+	}
+	.logo_wrap,
+	.partner-title,
+	.sub_header {
+		@extend .full-width;
+		position: absolute;
+	}
+	.logo_wrap {
+		@extend .full-width;
+		max-width: 70%;
+		bottom: 0;
+		position: absolute;
+		height: 100%;
+		left: 50%;
+		@include transform(translateX(-50%));
+		@include breakpoint(phablet){
+			max-width: calc(50% - 1rem);
+		}
+		@include breakpoint(tablet){
+			max-width: 90%;
+		}
+		img {
+			position: absolute;
+			bottom: 4rem;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		@include breakpoint(tablet){
+			&.logo_wrap-sml {
+				max-width: 40%;
+			}
+			&.logo_wrap-mid {
+				max-width: 70%;
+			}
+			&.logo_wrap-max {
+				max-width: 100%;
+			}
+		}
+	}
+	.partner-title{
+		left: 0;
+		bottom: 0;
+		padding: 1rem;
+		border-top: 1px solid;
+		@include border-opacity($primary-color-white, 100);
+		.sub_header{
+			padding: 0;
+			top: 1rem;
+			left: 50%;
+			font-size: 60%;
+			@include transform(translateX(-50%));
+			@include breakpoint(tablet){
+				font-size: 80%;
+			}
+			@include breakpoint(laptop){
+				font-size: 100%;
+			}
+		}
+	}
+}
+
+/* mobile layout*/
+@import
+"responsive/sections/associateBlock-main";

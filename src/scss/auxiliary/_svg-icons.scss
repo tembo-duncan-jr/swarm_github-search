@@ -1,0 +1,25 @@
+.svgIconWrap {
+    width: 100%;
+    height: 100%;
+    svg {
+        * {
+            @extend .default-transition;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.brand-logo {
+    svg {
+        .st0 {
+            fill: $primary-color;
+        }
+        .st1 {
+            fill: $site-color-dark;
+        }
+    }
+}
+
+

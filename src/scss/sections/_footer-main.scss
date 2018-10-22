@@ -1,0 +1,103 @@
+.footer-block {
+	position: absolute;
+	bottom: 0;
+	@include transform(rotate(-2deg) scale(1.2));
+    width: 100vw;
+    min-height: 70px;
+    @include rgba-background($primary-color-offwhite, 1);
+    .form_wrapper-main {
+    	&.user-msg {
+    		.main-header {
+    			@include breakpoint(largelaptop){
+		            font-size: 110%; 
+		        }
+		        @include breakpoint(largedesktop){
+		            font-size: 190%;
+		        }
+    		}
+    	}
+    }
+    @include breakpoint(iPhone-6-6S_port) { 
+		min-height: 100px;
+    }
+    @include breakpoint(midSmallMob) { 
+		min-height: 60px;
+    }
+    @include breakpoint(phablet) { 
+		min-height: 200px;
+    }
+    @include breakpoint(iPhoneSixLandscape) { 
+		min-height: 60px;
+    }
+    @include breakpoint(surfacePro2) { 
+		min-height: 80px;
+    }
+    @include breakpoint(tabletSmall) {
+    	min-height: 220px;
+    }
+    @include breakpoint(tablet) { 
+		min-height: 490px;
+    }
+    @include breakpoint(laptop) { 
+		min-height: 250px;
+    }
+    @include breakpoint(largelaptop) { 
+		min-height: 240px;
+    }
+    @include breakpoint(widelargelaptop) { 
+		min-height: 350px;
+    }
+    @include breakpoint(iPadGen3_-_4_-_5) { 
+		min-height: 800px;
+    }
+    @include breakpoint(xtraWidelargelaptop) { 
+		min-height: 300px;
+    }
+    @include breakpoint(largedesktop) { 
+		min-height: 430px;
+    }
+    > .mod_item {
+    	@include transform(rotate(2deg) scale(.85) translateX(5rem));
+		position: relative;
+		top: 12rem;
+		max-width: 20rem;
+		@include breakpoint(laptop) {
+			max-width: 60rem;
+			top: 6rem;
+			@include transform(rotate(2deg) scale(.85) translateX(-5rem));
+		}
+		@include breakpoint(upperEndlaptop) {
+			@include transform(rotate(2deg) scale(.85) translateX(-3.5rem));
+		}
+		@include breakpoint(largelaptop) {
+			top: 9.5rem;
+			@include transform(rotate(2deg) scale(.85) translateX(-1rem));
+		}
+		@include breakpoint(widelargelaptop) {
+			top: 11rem;
+			@include transform(rotate(2deg) scale(.85) translateX(calc(5% - 2.5rem)));
+		}
+		@include breakpoint(iPadGen3_-_4_-_5) {
+			@include transform(rotate(2deg) scale(.85) translateX(calc(5% - .7rem)));
+		}
+		@include breakpoint(xtraWidelargelaptop) {
+			@include transform(rotate(2deg) scale(.85) translateX(calc(10% - 1rem)));
+		}
+		@include breakpoint(debugWidelargelaptop) {
+			@include transform(rotate(2deg) scale(.85) translateX(calc(20% - .3rem)));
+		}
+		@include breakpoint(largedesktop) {
+			top: 12rem;
+			@include transform(rotate(2deg) scale(.85) translateX(calc(25% - 2rem)));
+		}
+		@include breakpoint(xtralargedesktop) {
+			@include transform(rotate(2deg) scale(.85) translateX(calc(50% - 2rem)));
+		}
+		@include breakpoint(largeTV) {
+			@include transform(rotate(2deg) scale(.85) translateX(55%));
+		}
+    }
+    > .info_contain-wrap { 
+		@include transform(rotate(2deg) scale(.85) translateX(0));
+    }
+}

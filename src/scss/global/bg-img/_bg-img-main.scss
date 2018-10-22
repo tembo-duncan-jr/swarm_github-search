@@ -1,0 +1,23 @@
+.bg-img-cover {
+    text-align: center;
+    background-size: cover !important;
+    margin-bottom: 0;
+    background: #fff;
+}
+
+/*Project / case Study Banners */
+ 
+ /* Ex.*/
+ /* .voomfitCaseBanner {*/
+ /*     background: url(../images/case-study/voomfit/voomfit_banner.jpg) no-repeat 50% top;*/
+ /* }*/
+
+/* =====*/
+/* Background colour fade in effect w/ scroll magic*/
+.main-content{
+     @include rgba-background($site-color-dark * 0.9, 1);
+     &.inActive{
+          @include rgba-background($site-color-dark * 0.9, 0);
+     }
+}
+

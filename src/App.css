@@ -1,0 +1,70 @@
+.headerBar {
+  background-color:#1A1A1A;
+  display: block;
+  color: #fff;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.App {
+  text-align: center;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.badgeWrap {
+  display: flex;
+  padding: 0.25em .5em;
+  border: 1px solid #000;
+  border-radius: .2em;
+}
+
+.badgeWrap:not(:last-child) { 
+  margin-bottom: .5em;
+}
+
+.badgeWrap p {
+  margin: 0;
+}
+
+.badgeWrap .badgeIcon {
+  margin-right: .2em;
+}
+
+.App input {
+  border: .5em solid #808184;
+  padding: .5em 1.5em;
+  border-radius: 0;
+  font-size: .8em; 
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

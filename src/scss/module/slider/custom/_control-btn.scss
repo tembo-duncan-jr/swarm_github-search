@@ -1,0 +1,54 @@
+.btn_wrap {
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
+	z-index: 250;
+	@include flexbox;
+	@include flexflow(row);
+	/* @include breakpoint(largemob) {*/
+	/* 	@include flexbox;*/
+	/* 	@include flexflow(row);*/
+	/* }*/
+	@include breakpoint(laptop) {
+		bottom: 2em;
+		left: 2em;
+	}
+	.imgBanBtn  {
+		&:not(:last-child) {
+			margin-right: 1em;
+		}
+	}
+}
+
+.banner_wrap {
+	button {
+		background-color: transparent;
+		padding: .5em 1em;
+		color: #fff;
+		border: 1px solid;
+		@include border-opacity(#fff, 100); 
+		font-size: .9em;
+		border-radius: .1em;
+		font-weight: 100;
+		margin-top: .5em;
+		&:hover {
+			background-color: $brown1;
+			border: 1px solid;
+			@include border-opacity($brown1, 100);
+		}
+	}
+}
+
+.imgBanBtn {
+	cursor: pointer;
+	@include opacity(.8);
+	i {
+		color: $pink1;
+	}
+	&:hover {
+		@include opacity(1);
+	}
+	&:hover i {
+		color: lighten($pink1, 20%);
+	}
+}

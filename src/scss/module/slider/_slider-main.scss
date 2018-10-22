@@ -1,0 +1,88 @@
+.main-slider_banner{
+	position: relative;
+	/* dev only*/
+	/*border-bottom: 1px solid;*/
+	/*@include border-opacity($body-color * 1.3, 2); */
+
+	padding-bottom: 1rem;
+	padding-top: 4rem;
+	@include breakpoint(iPhone6Port){
+		padding-top: 4rem;
+		padding-bottom: 0;
+	}
+	@include breakpoint(midSmallMob){
+		padding-top: 0;
+	}
+	@include breakpoint(iPhoneSixLandscape){
+		margin: 0 auto;
+		max-width: calc(95% - 1rem);
+		padding-top: 5rem;
+	}
+	@include breakpoint(iPhone-6-Plus_landscape){
+		max-width: calc(95% - 3rem);
+	}
+	@include breakpoint(phablet){
+		padding-top: 4.5rem;
+	}
+	@include breakpoint(surfacePro2){
+		padding-top: 5rem;
+	}
+	@include breakpoint(tabletSmall){
+		padding-top: 5.5rem;
+	}
+	@include breakpoint(tablet){
+		max-width: 100%;
+		padding-top: 6.5rem;
+	}
+	@include breakpoint(laptop){
+		padding-top: 8.5rem;
+		margin-bottom: 4rem;
+	}
+	@include breakpoint(widelargelaptop){
+		padding-top: 11.5rem;
+	}
+	@include breakpoint(xtraWidelargelaptop){
+		padding-top: 8rem;
+	}
+	.custom-select,
+	.slider_nav {
+		display: none !important;
+	}
+}
+
+.slider_wrap-main{
+	position: relative;
+	@extend .default-max-width;
+}
+
+/* ======*/
+
+/* panels*/
+
+.img-list_desktop {
+	display: none;
+	@include breakpoint(tablet){
+		display: block;
+	}
+}
+
+.img-list_mob {
+	padding-top: 3.5rem;
+	display: block;
+	@include breakpoint(tablet){
+		display: none;
+	}
+	.block_wrap-main {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		.block_wrap-item {
+			&:not(:last-of-type) {
+				padding-bottom: .5rem;
+				margin-bottom: .5rem;
+				border-bottom: 1px solid;
+				@include border-opacity($body-color, 10);
+			}
+		}
+	} 
+}
+

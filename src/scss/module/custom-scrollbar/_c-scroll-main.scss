@@ -1,0 +1,26 @@
+.mCSB_scrollTools {
+	z-index: 999999 !important;
+}
+
+.mCSB_inside {
+	> .mCSB_container {
+		margin-right: 0;
+	} 
+}
+
+.mCS-dark{
+	&.mCSB_scrollTools {
+		.mCSB_dragger {
+			.mCSB_dragger_bar {
+				@include rgba-background($site-color-dark, .75);
+			}
+			&:hover .mCSB_dragger_bar {
+				@include rgba-background($primary-color, .9);
+			}
+		}
+	}
+}
+
+
+
+

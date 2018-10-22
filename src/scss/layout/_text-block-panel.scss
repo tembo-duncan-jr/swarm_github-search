@@ -1,0 +1,63 @@
+/* defaults*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    @include prime-ff-custom-reg;
+    &:last-child,
+    &:only-child {
+        @include padding-all(0, null, 0, null);
+        @include margin-all(0, null, 0, null);
+    }
+    &.prim-color {
+        @include rgba-color($primary-color, 1);
+    }
+}
+
+/* ====*/
+
+.textBlock { 
+    /* defaults */
+    @extend .default-transition;
+    z-index: 9999;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        @include margin-all(0, 0, 0, 0);
+        &:not(:last-of-type),
+        &:not(:only-of-type) {
+            @include padding-all(null, null, calc(3rem - 2.5rem), null); 
+        }
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+    .main-header {
+        @include rgba-color($primary-color, 1);
+    }
+    .alt_main-header,
+    .sub-header {
+        @include rgba-color($site-color-dark, 1);
+    }
+    .sub-header { 
+        @include prime-ff-custom-light;
+        font-weight: 100;
+    }
+}
+
+.t-and-c {
+    .main-header {
+        margin-bottom: 2rem;
+    }
+    p {
+        margin-bottom: 1rem;
+    }
+}

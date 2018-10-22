@@ -1,0 +1,37 @@
+/* misc */
+
+body,
+.prime-font-family {
+    @include prime-ff-custom-reg;
+}
+
+
+/* highlight colors*/
+
+.primeHighlight {
+    @include rgba-color($primary-color, 1);
+}
+
+/* defaults*/
+
+p,
+.bodyPara {
+    @include rgba-color($body-color, 1);
+    @include margin(0);
+    &:not(:last-of-type),
+    &:not(:only-of-type) {
+        @include padding-all(0, 0, 1rem, 0);
+    }
+}
+
+p,
+.bodyPara,
+.bodyHeader,
+{
+    br {
+        display: none;
+        @include breakpoint(tablet) {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+.intro-overlay {
+    z-index: 99999;
+    @extend .default-transition; 
+    transition-duration: .05s;
+    transition-timing-function: $easeInOutCirc;
+    .logo-wrap {
+        .logo_wrap-item {
+            &:nth-of-type(1) {
+                svg {
+                    .st0 {
+                        @include opacity(0.9);
+                    }
+                    .st1 {
+                        fill: #1D1D1B;
+                    }
+                    .st2 {
+                        @include opacity(0.8);
+                    }
+                    .st3 {
+                        @include opacity(0.6);
+                    }
+                    .st4 {
+                        @include opacity(0.4);
+                    }
+                }
+            }
+            &:nth-of-type(2) {
+                svg {
+                    .st0 {
+                        fill: #E5332B;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero_type-banner,
+.logo-wrap,
+.logo_wrap-item {
+    width: 100%;
+}
+
+.hero_type-banner {
+    @extend .default-transition;
+    max-width: 13rem;
+    position: absolute;
+    top: auto;
+    bottom: 3rem;
+    @extend .trans_center-x;
+    @include breakpoint(iPhone-6-6S_port) {
+        bottom: 4rem;
+    }
+    @include breakpoint(midSmallMob) {
+        bottom: 3rem;
+    }
+    @include breakpoint(phablet) {
+        bottom: 6rem;
+    }
+    @include breakpoint(iPhoneSixLandscape) {
+         bottom: 4rem;
+    }
+    @include breakpoint(surfacePro2) {
+        bottom: 3rem;
+        max-width: 25rem;
+    }
+    @include breakpoint(tablet) {
+        max-width: 80rem;
+        min-width: 45rem;
+        @include transform(translateX(-8rem));
+    }
+    @include breakpoint(laptop) {
+        min-width: 1rem;
+        @include transform(translateX(-8rem));
+    }
+    @include breakpoint(upperEndlaptop) {
+        @include transform(translateX(-15rem));
+    }
+    @include breakpoint(largelaptop) {
+        /* top: calc(35% + 2rem);*/
+    }
+    @include breakpoint(widelargelaptop) {
+        /* top: calc(25% + 5rem);*/
+        max-width: 45rem;
+    }
+    @include breakpoint(xtraWidelargelaptop) {
+        /* top: calc(20% + 8rem);*/
+        max-width: 50rem;
+    }
+    @include breakpoint(largedesktop) {
+        /* top: calc(30% + 10rem);*/
+    }
+    @include breakpoint(largeTV) {
+        max-width: 60rem;
+        /* top: calc(50% - 1rem);*/
+    }
+    .logo-wrap {
+        @include flexbox;
+        .logo_wrap-item {
+            &:nth-of-type(1) {
+                max-width: calc(100% - 30%);
+            }
+            &:nth-of-type(2) {
+                margin-left: -.5rem;
+                max-width: calc(100% - 70%);
+            }
+        }
+    }
+    .main-logo_wrap {
+        max-width: 100%;
+    }
+}
